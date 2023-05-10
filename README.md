@@ -56,7 +56,6 @@
 `SPARQL`
 ```PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-
 SELECT ?s
 WHERE {
   ?s rdf:type foaf:Person .
@@ -66,6 +65,7 @@ WHERE {
 Пример 2: Выборка имен и фамилий всех людей, у которых есть свойство `foaf:knows` с другим человеком
 
 `SPARQL`
+
 ```PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
@@ -80,9 +80,9 @@ WHERE {
 Пример 3: Выборка всех субъектов, у которых есть свойство `foaf:name` или `foaf:nick`
 
 `SPARQL`
+
 ```PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-
 SELECT ?s
 WHERE {
   ?s rdf:type foaf:Person .
