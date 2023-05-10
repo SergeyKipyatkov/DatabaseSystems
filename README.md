@@ -41,11 +41,15 @@
 
 Перед выполнением запросов необходимо установить 4store и загрузить в него данные RDF. Процесс установки и загрузки данных зависит от операционной системы и может отличаться для разных версий 4store. Например, для Ubuntu Linux установка может быть выполнена следующим образом:
 
-```sudo apt-get install 4store```
+```
+sudo apt-get install 4store
+```
 
 Затем можно загрузить данные RDF в БД с помощью утилиты `4s-import`. Предположим, что данные RDF находятся в файле `data.rdf`. Тогда можно выполнить следующую команду:
 
-```4s-import default data.rdf```
+```
+4s-import default data.rdf
+```
 
 Шаг 2: Запросы SPARQL к БД 4store
 
@@ -54,7 +58,8 @@
 Пример 1: Выборка всех субъектов, у которых есть свойство `rdf:type` с значением `foaf:Person`
 
 `SPARQL`
-```PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 SELECT ?s
 WHERE {
@@ -66,7 +71,8 @@ WHERE {
 
 `SPARQL`
 
-```PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 SELECT ?firstName ?lastName
 WHERE {
@@ -81,7 +87,8 @@ WHERE {
 
 `SPARQL`
 
-```PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+```
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 SELECT ?s
 WHERE {
@@ -101,7 +108,9 @@ WHERE {
 
 Для выполнения запросов через командную строку можно воспользоваться утилитой `4s-query`:
 
-```4s-query default "SELECT ?s WHERE {?s ?p ?o}"```
+```
+4s-query default "SELECT ?s WHERE {?s ?p ?o}"
+```
 
 Результаты запроса будут выведены в стандартный вывод.
 
@@ -141,13 +150,15 @@ WHERE {
 Пример создания индексов в 4store:
 
 `bash`
-```# Создание индексов по субъекту, предикату и объекту
+```
+# Создание индексов по субъекту, предикату и объекту
 4s-backend-setup example
 4s-backend example
 4s-import example file.nt
 ```
 
-```# Создание индекса по контексту
+```
+# Создание индекса по контексту
 4s-backend-setup example_context
 4s-backend example_context
 4s-import example_context file.nt -c http://example.com/graph
